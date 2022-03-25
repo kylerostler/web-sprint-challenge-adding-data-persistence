@@ -9,7 +9,8 @@
             tbl.string('project_name', 100)
                 .notNullable();
             tbl.string('project_description', 100);
-            tbl.boolean('project_completed');
+            tbl.boolean('project_completed')
+                .defaultTo(false);
         })
         .createTable('resources', tbl => {
             tbl.increments('resource_id');
@@ -23,7 +24,8 @@
             tbl.string('task_description')
                 .notNullable();
             tbl.string('task_notes', 100);
-            tbl.boolean('task_completed');
+            tbl.boolean('task_completed')
+                .defaultTo(false);
             tbl.integer('project_id')
                 .unsigned()
                 .notNullable()
