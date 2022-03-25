@@ -6,9 +6,9 @@ const tasksRouter = require('./task/router')
 const server = express()
 
 server.use(express.json())
-server.use('/resources', resourcesRouter)
-server.use('/projects', projectsRouter)
-server.use('/tasks', tasksRouter)
+server.use('/api/resources', resourcesRouter)
+server.use('/api/projects', projectsRouter)
+server.use('/api/tasks', tasksRouter)
 
 server.use((err, req, res, next) => { // eslint-disable-line
     res.status(500).json({
