@@ -16,6 +16,7 @@
             tbl.string('resource_name')
                 .notNullable()
                 .unique();
+            tbl.string('resource_description');
         })  
         .createTable('tasks', tbl => {
             tbl.increments('task_id');

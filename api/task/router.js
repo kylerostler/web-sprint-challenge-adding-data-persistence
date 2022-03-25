@@ -10,4 +10,12 @@ router.get('/', (req, res, next) => {
         .catch(next)
 })
 
+router.post('/', (req, res, next) => {
+    Task.createTask(req.body)
+        .then(task => {
+            res.status(201).json(task)
+        })
+        .catch(next)
+})
+
 module.exports = router
